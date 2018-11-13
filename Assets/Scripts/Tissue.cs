@@ -13,13 +13,8 @@ public class Tissue : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
+        GetComponent<Rigidbody2D>().velocity = new Vector2(7, 0);
         Invoke("SelfDestruct", 2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        this.transform.position = new Vector3(this.transform.position.x + 0.1f, transform.position.y, transform.position.z);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
